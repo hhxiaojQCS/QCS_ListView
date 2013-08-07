@@ -8,9 +8,23 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".MainActivity" >
 
-    <TextView
+    <Button
+        android:id="@+id/btn01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="新建文件" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="57dp"
+        android:layout_marginTop="52dp"
+        android:text="Button" />
+
+    <Button
+        android:id="@+id/btn02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/btn01"
+        android:layout_below="@+id/btn01"
+        android:layout_marginTop="17dp"
+        android:text="Button" />
 
 </RelativeLayout>

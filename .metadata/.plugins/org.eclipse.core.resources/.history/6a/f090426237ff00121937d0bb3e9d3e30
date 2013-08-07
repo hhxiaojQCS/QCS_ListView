@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lilay01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/lila_filter_01"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lila_filter_02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#000000"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="#CE0000"
+            android:gravity="left"
+            android:orientation="horizontal"
+            android:paddingLeft="20dip" >
+
+            <TextView
+                android:id="@+id/tv_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请选择..."
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#FFFFFF" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

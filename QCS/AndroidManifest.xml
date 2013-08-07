@@ -22,6 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.example.qcs.TopRecommendedActivity"
+            android:label="@string/title_activity_top_recommended" >
+        </activity>
+        <activity
+            android:name="com.example.qcs.FilterActivity"
+            android:label="@string/title_activity_filter" >
+        </activity>
     </application>
 
 </manifest>

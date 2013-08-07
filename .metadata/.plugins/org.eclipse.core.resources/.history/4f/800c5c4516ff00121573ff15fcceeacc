@@ -1,0 +1,81 @@
+package com.example.qcs;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.View;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.view.View.OnCreateContextMenuListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+
+public class TopRecommendedActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_toprecommended);
+		//绑定Layout里面的ListView
+		ListView list = (ListView)findViewById(R.id.lv01);
+		//生成动态数组，加入数据
+		ArrayList<HashMap<String , Object>> listItem = new ArrayList<HashMap<String , Object>>();
+		for(int i=0;i<10;i++){
+			HashMap<String,Object> map = new HashMap<String ,Object>();
+			map.put("ItemImage", R.drawable.ic_launcher);
+			map.put("ItemTitle", "Level"+i);
+			map.put("ItemText", "Finished in 1 54 Secs,70Moves! ");
+			listItem.add(map);
+		}
+		// 生成适配器的Item和动态数组对于的元素
+		SimpleAdapter listItemAdapter = new SimpleAdapter(this , listItem//数据源
+				,R.layout.view_toprecommended_listview,//ListItem的XML实现
+				//动态数组与ImageItem对应的子项
+				new String[]{"ItemImage","ItemTitle","ItemText"},
+				new int[]{R.id.ItemImage,R.id.ItemTitle,R.id.ItemText}
+				);
+		//添加并且显示
+		list.setAdapter(listItemAdapter);
+		//添加点击
+		list.setOnItemClickListener(new OnItemClickListener() {
+
+			@Override
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				setTitle("单击第"+arg2+"个项目");
+				
+			}
+		});
+		
+	//添加长按点击
+		list.setOnCreateContextMenuListener(new OnCreateContextMenuListener() {
+			
+			@Override
+			public void onCreateContextMenu(ContextMenu menu, View v,
+					ContextMenuInfo menuInfo) {
+				// TODO Auto-generated method stub
+				menu.setHeaderTitle("长按菜单-ContextMenu");
+				menu.add(0,0,0,"弹出长按菜单0");
+				menu.add(0,0,0,"弹出长按菜单1");
+				
+				
+			}
+		});
+		
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		setTitle("点击了长按菜单里面的第"+item.getItemId()+"个项目");
+		
+		return super.onContextItemSelected(item);
+		}
+
+}

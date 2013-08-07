@@ -1,0 +1,46 @@
+package com.example.qcs;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
+
+public class TopRecommendedActivity extends Activity {
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_toprecommended);
+		//绑定Layout里面的ListView
+		ListView list = (ListView)findViewById(R.id.lv01);
+		//生成动态数组，加入数据
+		ArrayList<HashMap<String , Object>> listItem = new ArrayList<HashMap<String , Object>>();
+		for(int i=0;i<10;i++){
+			HashMap<String,Object> map = new HashMap<String ,Object>();
+			map.put("ItemImage", R.drawable.ic_launcher);
+			map.put("ItemTitle", "Level"+i);
+			map.put("ItemText", "Finished in 1 54 Secs,70Moves! ");
+			listItem.add(map);
+		}
+		// 生成适配器的Item和动态数组对于的元素
+		SimpleAdapter listItemAdapter = new SimpleAdapter(this , listItem//数据源
+				,R.layout.view_toprecommended_listview,//ListItem的XML实现
+				//动态数组与ImageItem对应的子项
+				new String[]{"ItemImage","ItemTitle","ItemText"},
+				new int[]{R.id.ItemImage,R.id.ItemTitle,R.id.ItemText}
+				);
+		
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.top_recommended, menu);
+		return true;
+	}
+
+}

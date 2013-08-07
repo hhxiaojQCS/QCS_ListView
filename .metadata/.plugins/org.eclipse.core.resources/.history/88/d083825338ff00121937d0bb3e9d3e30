@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lilay01"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#000000"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:id="@+id/lilay_filter_01"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:background="#FF0000"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/lilay_filter_02"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="6"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="#000000"
+            android:gravity="left"
+            android:orientation="vertical"
+            android:paddingLeft="20dip" >
+
+            <TextView
+                android:id="@+id/tv_01"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="请选择..."
+                android:textColor="#FFFFFF"
+                android:textSize="28sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#FFFFFF" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</LinearLayout>

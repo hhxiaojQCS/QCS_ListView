@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/raly01"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:layout_marginLeft="10dp"
+    >
+
+    <TextView
+        android:id="@+id/ItemText_filter"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:textColor="#FFFFFF"
+        android:text="dfsaf"
+        android:textSize="16dip" />
+
+    <View
+        android:id="@+id/ItemView_filter"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/ItemText_filter"
+        android:background="#FFFFFF" />
+
+</RelativeLayout>
